@@ -1,0 +1,128 @@
+/* Theme */
+:root {
+    --fashion-1-hex: #F2AA6B;
+    --fashion-2-hex: #403022;
+    --fashion-3-hex: #d26d0f;
+    --fashion-4-hex: #A64914;
+    --fashion-5-hex: #733E1F;
+}
+
+* {
+    font-family: 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    /* overflow-x: hidden !important; */
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* height: 200vh; */
+    position: relative;
+    background-color: var(--fashion-1-hex);
+}
+
+.navbar {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+    background-color: var(--fashion-1-hex);
+}
+
+.navbar-bg {
+    background-color: var(--fashion-3-hex) !important;
+    color: white !important;
+}
+
+main {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.nav-link {
+    inline-size: 300px;
+}
+
+.nav-link a {
+    text-decoration: none;
+    color: #000;
+    margin-inline-end: 1rem;
+}
+
+.nav-link a:hover {
+    color: #A64914;
+}
+
+.hero-content {
+    /* visibility: hidden;
+    opacity: 0; */
+
+    /* margin-block-start: 5%; */
+    width: 100%;
+    height: 90%;
+    display: flex;
+    /* flex-direction: column-reverse; */
+    justify-content: center;
+}
+
+.hero-inner {
+    width: 90%;
+    height: 100vh;
+}
+
+.hero-inner h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-block: 25%;
+    font-size: 64px;
+}
+
+.main {
+    width: 300%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    /* overflow-x: scroll; */
+    background-color: var(--fashion-4-hex);
+}
+
+.main section {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 64px;
+}
+
+.footer {
+    background-color: var(--fashion-1-hex);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-inner h1 {
+    font-size: 64px;
+}
