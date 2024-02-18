@@ -1,15 +1,32 @@
 /* Theme */
 :root {
-    --fashion-1-hex: #F2AA6B;
-    --fashion-2-hex: #403022;
-    --fashion-3-hex: #d26d0f;
-    --fashion-4-hex: #A64914;
-    --fashion-5-hex: #733E1F;
+    --fashion-1-hex: #000000;
+    --fashion-2-hex: #FFCB00;
+    --fashion-3-hex: #FF6150;
+    --fashion-4-hex: #F7F0E3;
+
+    --line-size: 2px;
+    --border-size: 1px solid #f7f0e3;
+    --border-radius: 10px;
 }
 
 * {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Poppins', 'Glacial Indifference', sans-serif;
     box-sizing: border-box;
+}
+
+.hero h1 {
+    font-size: 6vw;
+    letter-spacing: 2px;
+    margin-block: 1vw;
+}
+
+.hero h2 {
+    font-size: 2rem;
+}
+
+.hero h3 {
+    font-size: 1rem;
 }
 
 body {
@@ -27,6 +44,8 @@ section {
 }
 
 .hero {
+    inline-size: 100%;
+    block-size: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -44,6 +63,7 @@ section {
     z-index: 999;
     transition: background-color 0.3s ease;
     background-color: var(--fashion-1-hex);
+    color: var(--fashion-4-hex);
 }
 
 .navbar-bg {
@@ -52,25 +72,40 @@ section {
 }
 
 main {
-    width: 80%;
+    width: 85%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
+    border-bottom: var(--border-size);
 }
 
-.nav-link {
-    inline-size: 300px;
-}
-
-.nav-link a {
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
     text-decoration: none;
-    color: #000;
-    margin-inline-end: 1rem;
+    color: var(--fashion-1-hex);
+    background-color: transparent;
+    border: var(--border-size);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-family: 'Glacial Indifference', sans-serif;
 }
 
-.nav-link a:hover {
-    color: #A64914;
+button:hover {
+    background-color: var(--fashion-3-hex);
+    border: var(--border-size);
+}
+
+button a {
+    text-decoration: none;
+    color: var(--fashion-4-hex);
+    font-weight: 400;
+    letter-spacing: .5px;
 }
 
 .hero-content {
@@ -79,23 +114,141 @@ main {
 
     /* margin-block-start: 5%; */
     width: 100%;
-    height: 90%;
+    height: 100%;
     display: flex;
-    /* flex-direction: column-reverse; */
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.grid-content {
+    width: 85%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    color: var(--fashion-4-hex);
+}
+
+.grid-item {
+    padding: 1rem;
+    position: relative;
+    height: 26vw;
+}
+
+.first {
+    width: 100%;
+    height: 100%;
+}
+
+.grid-inner {
+    inline-size: 100%;
+    /* block-size: 0%; */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.line {
+    width: 100%;
+    height: .05vw;
+    padding: 0.005%;
+    background-color: var(--fashion-4-hex);
+}
+
+.red {
+    position: absolute;
+    bottom: 0%;
+    left: 10vw;
+    block-size: 90% !important;
+    padding: 5%;
+
+    background-image: url('../assets/svg/Vector\ \(2\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.grid-text {
+    font-size: 4vw;
+    font-weight: 300;
+    margin: 0;
+    margin-block: 1vw;
+}
+
+.button {
+    width: 200px;
+    height: 4vw;
+    border: var(--border-size);
+    border-radius: 25px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--fashion-4-hex);
+    color: var(--fashion-1-hex);
+}
+
+.third {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    padding: 0 !important;
+}
+
+.files {
+    block-size: 80%;
+    inline-size: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.lower {
+    flex: 1;
+    block-size: 100%;
+    inline-size: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-.hero-inner {
-    width: 90%;
-    height: 100vh;
+.file {
+    flex: 2;
+    inline-size: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 }
 
-.hero-inner h1 {
-    color: #ffffff;
-    text-align: center;
-    margin-block: 25%;
-    font-size: 64px;
+.file-bg {
+    width: calc(95% / 3);
+    margin-inline-start: calc(10vw /4);
+    position: relative;
 }
+
+.file-bg>img {
+    object-fit: contain;
+    inline-size: 100%;
+    z-index: 1;
+}
+
+.mission>h3 {
+    color: var(--fashion-4-hex) !important;
+}
+
+
+.file-bg>h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 70%;
+    z-index: 2;
+    margin: 0;
+    color: var(--fashion-1-hex);
+}
+
+
 
 .main {
     width: 300%;
