@@ -97,9 +97,7 @@ window.addEventListener("load", () => {
   }
 
   gsap.from(".event", {
-    y: -400, // Move up by 400 pixels
     x: 800,
-    rotation: 180,
     duration: 5,
     ease: "elastic.in",
     scrollTrigger: {
